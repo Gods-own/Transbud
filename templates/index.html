@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% if rows > 0 %}
+   <ul>
+    {% for group in groups %}
+     <li>
+         <p>{{group.group_name}}</p>
+         <p>{{group.group_description}}</p>
+         <p>{{group.date_created}}</p>
+         <a href="/createBudget/{{group.id}}">Visit</a>
+     </li>
+    {% endfor %}
+   </ul>
+{% else %}  
+    <h5>You do not belong to any group</h5> 
+{% endif %}
+{% endblock %}

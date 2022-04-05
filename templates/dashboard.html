@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form action="/addMember/{{groupid}}" method="post">
+    {% if message.message != "Nothing" %}
+    <div><p>{{message.message}}</p></div>
+    {% endif %}
+    <div class="form-group">
+        <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Create">
+</form>
+{% endblock %}
